@@ -81,14 +81,42 @@ fizzBuzz();
 
 // Greetings
 
+// Today's Time Clock 
+
+function onPageLoad() {
+    const currentHoursAndMinutes = getTime() 
+    const message = showTime(currentHoursAndMinutes)
+    return message;
+}
+
+function getTime () {
+    const myDate = newDate
+    let time = myDate.getHours() + ':' + myDate.getMinutes();
+    return time;
+}
+
+function showTime (hoursAndMinutes) {
+
+}
+
+window.onload = onPageLoad
+
+
+    // const myDate = new Date()
+    // let hours = myDate.getHours()
+    // let minutes = myDate.getMinutes()
+    // let seconds = myDate.getSeconds()
+    // let milliseconds = myDate.getMilliseconds()
+    // let time = hours + ':' + minutes + ':' + seconds + '.' + milliseconds
+    // console.log(time) 
 
 function timeGreetings () {
-    let funNum = document.getElementById('numInput').value;
-    if (funNum < 13 && funNum >= 0) {
+    let funNum = Number(document.getElementById('numInput').value);
+    if (funNum < 12 && funNum >= 0 || funNum === 24) {
         alert("Good Morning");
     }
 
-    else if (funNum < 17 && funNum > 12) {
+    else if (funNum < 17 && funNum > 11) {
         alert("Good Afternoon");
     }
 
@@ -96,7 +124,7 @@ function timeGreetings () {
         alert("Good Evening");
     }
 
-    else if (funNum < 25 && funNum > 19) {
+    else if (funNum < 24 && funNum > 19) {
         alert("Good Night");
     }
 
